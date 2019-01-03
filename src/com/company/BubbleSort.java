@@ -10,8 +10,9 @@ public class BubbleSort {
 
         //A Loop that runs while there are still swaps to be potentially made
         while (loop) {
+            //Swaps index values if the one on the left is greater than the right value
             if (arr[i] > arr[i + 1]) {
-                
+                swap(arr, i);
                 swaps = true;
             }
             i++;
@@ -30,11 +31,11 @@ public class BubbleSort {
                 loop = false;
             }
         }
-        System.out.println("Iteration count is " + cnt);
+        System.out.println("Number of complete iterations = " + cnt);
         }
 
-        //iterates through array and checks whether or not to swap
-        public void swap(int[] arr, int i) {
+        //Swaps the value of the current index with the next index's value
+        public static void swap(int[] arr, int i) {
             int hold;
                 hold = arr[i + 1];
                 arr[i + 1] = arr[i];

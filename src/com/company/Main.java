@@ -1,5 +1,6 @@
 package com.company;
 
+
 public class Main {
 
     public static void main(String[] args) {
@@ -22,5 +23,11 @@ public class Main {
         for (int num:testArr)
             System.out.print(num+" ");
         System.out.println();
+
+        //Program Runtime
+        //long time = System.nanoTime();
+        long time = System.currentTimeMillis();
+
+        System.out.println("Time Taken: " + time);
     }
 }
