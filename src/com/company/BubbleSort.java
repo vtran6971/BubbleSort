@@ -5,17 +5,13 @@ public class BubbleSort {
     {
         boolean loop = true;
         boolean swaps = false;
-        int hold;
         int i = 0;
         int cnt = 0;
 
-        //Loop that runs while there are still swaps to be potentially made
+        //A Loop that runs while there are still swaps to be potentially made
         while (loop) {
-            //iterates through array and checks whether or not to swap
-            if (arr[i] > arr[i+1]) {
-                hold = arr[i+1];
-                arr[i+1] = arr[i];
-                arr[i] = hold;
+            if (arr[i] > arr[i + 1]) {
+                
                 swaps = true;
             }
             i++;
@@ -35,6 +31,27 @@ public class BubbleSort {
             }
         }
         System.out.println("Iteration count is " + cnt);
+        }
+
+        //iterates through array and checks whether or not to swap
+        public void swap(int[] arr, int i) {
+            int hold;
+                hold = arr[i + 1];
+                arr[i + 1] = arr[i];
+                arr[i] = hold;
+
+        }
+
+        //Generates an array with random numbers 0-1000
+        //Array length is based on input count
+        public static int[] randomIntArr (int count)
+        {
+            int[] arr = new int[count];
+            for (int i = 0; i<count; i++)
+            {
+                arr[i] = (int)(Math.random()*1001);
+            }
+            return arr;
         }
 
 }
