@@ -3,37 +3,38 @@ package com.company;
 public class BubbleSort {
     public static void bubbleSort(int[] arr)
     {
-        int count = 1;
+        boolean loop = true;
+        boolean swaps = false;
         int hold;
         int i = 0;
-        int j = 1;
+        int cnt = 0;
 
-        while (count > 0) {
-            if (arr[i] > arr[j]) {
-                hold = arr[j];
-                arr[j] = arr[i];
+        //Loop that runs while there are still swaps to be potentially made
+        while (loop) {
+            //iterates through array and checks whether or not to swap
+            if (arr[i] > arr[i+1]) {
+                hold = arr[i+1];
+                arr[i+1] = arr[i];
                 arr[i] = hold;
-                i++;
-                j++;
-                count++;
+                swaps = true;
             }
-            else
-            {
-                i++;
-                j++;
-            }
+            i++;
 
-            if(j == arr.length && count > 1)
+            //Once iteration reaches end of array go back to the beginning if there are swaps to be potentially made
+            if(i == arr.length-1 && swaps == true)
             {
                 i = 0;
-                j = 1;
-                count = 1;
+                swaps = false;
+                cnt++;
             }
-            if(j == arr.length && count == 1)
+            //Once iteration reaches end of array ends while loop if there are no more swaps to be made
+            if(i == arr.length-1 && swaps == false)
             {
-                count = 0;
+                cnt++;
+                loop = false;
             }
         }
+        System.out.println("Iteration count is " + cnt);
         }
 
 }
