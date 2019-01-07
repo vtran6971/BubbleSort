@@ -10,7 +10,7 @@ public class Main {
         int[] testArr = BubbleSort.randomIntArr(10);
 
         //Prints out array before sort
-        System.out.print("Before: ");
+        /*System.out.print("Before: ");
         for (int num:testArr)
             System.out.print(num+" ");
         System.out.println();
@@ -28,6 +28,18 @@ public class Main {
         //long time = System.nanoTime();
         long time = System.currentTimeMillis();
 
-        System.out.println("Time Taken: " + time);
+        System.out.println("Time Taken: " + time); */
+
+        System.out.print("Before: ");
+        for (int num:testArr)
+            System.out.print(num+" ");
+        System.out.println();
+
+        selectionSort.SelectionSort(testArr);
+
+        System.out.print("After: ");
+        for (int num:testArr)
+            System.out.print(num+" ");
+        System.out.println();
     }
 }
