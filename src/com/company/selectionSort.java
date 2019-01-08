@@ -3,22 +3,28 @@ package com.company;
 public class selectionSort {
     public static void SelectionSort(int[] array)
     {
-      int min = 1001;
+      int indexofMin = 0;
+      int i = 0;
+      int hold = 0;
 
-        for (int i = 0; i < array.length; i++)
-        {
-            for (int j = 0; j < array.length; j++)
+            for (int j = i; j < array.length; j++)
             {
-                if(array[j] < min)
+                if(array[j] < array[j+1])
                 {
-                  min = array[j];
+                  indexofMin = j;
                 }
-                if(j == array.length-1)
+                if(j == array.length-2)
                 {
-                 array[i] = min;
-                 j = array.length;
+                    hold = array[i];
+                 array[i] = array[indexofMin];
+                 array[indexofMin] = hold;
+                 i++;
+                 j = i;
+                }
+                if(i == array.length-1)
+                {
+                    j = array.length;
                 }
             }
-        }
     }
 }
