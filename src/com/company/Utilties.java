@@ -31,6 +31,7 @@ public class Utilties {
         return arr;
     }
 
+    //Generates an array with random strings
     /*public static int[] randomStringArr (int count)
     {
         String[] array = new String[count];
