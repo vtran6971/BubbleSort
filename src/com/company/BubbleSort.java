@@ -55,4 +55,32 @@ public class BubbleSort {
             return arr;
         }
 
+        public static Boolean checkSum(int[] before, int[] after)
+        {
+            int sumBefore = 0;
+            int sumAfter = 0;
+            Boolean sumCheck;
+
+            for (int i = 0; i < before.length; i++)
+            {
+                sumBefore += before[i];
+            }
+
+            for (int j = 0; j < after.length; j++)
+            {
+                sumAfter += before[j];
+            }
+
+            if (sumBefore == sumAfter)
+            {
+                sumCheck = true;
+            }
+            else
+            {
+                sumCheck = false;
+            }
+
+            return sumCheck;
+        }
+
 }
