@@ -12,7 +12,7 @@ public class BubbleSort {
         while (loop) {
             //Swaps index values if the one on the left is greater than the right value
             if (arr[i] > arr[i + 1]) {
-                swap(arr, i);
+                Utilties.swap(arr, i);
                 swaps = true;
             }
             i++;
@@ -31,56 +31,24 @@ public class BubbleSort {
                 loop = false;
             }
         }
-        System.out.println("Number of complete iterations = " + cnt);
+        System.out.println("Number of complete iterations = " + cnt); //Used to test number of iterations needed to sort
         }
 
-        //Swaps the value of the current index with the next index's value
-        public static void swap(int[] arr, int i) {
-            int hold;
-                hold = arr[i + 1];
-                arr[i + 1] = arr[i];
-                arr[i] = hold;
-
-        }
-
-        //Generates an array with random numbers 0-1000
-        //Array length is based on input count
-        public static int[] randomIntArr (int count)
+        public static void bubbleSortStrings (String[] array)
         {
-            int[] arr = new int[count];
-            for (int i = 0; i<count; i++)
+            int test;
+            for(int i = 0; i < array.length; i++)
             {
-                arr[i] = (int)(Math.random()*1001);
+                test = array[i].compareTo(array[i+1]);
+                if(test < 0)
+                {
+                 Utilties.swapString(array, i);
+                }
             }
-            return arr;
         }
 
-        public static Boolean checkSum(int[] before, int[] after)
-        {
-            int sumBefore = 0;
-            int sumAfter = 0;
-            Boolean sumCheck;
 
-            for (int i = 0; i < before.length; i++)
-            {
-                sumBefore += before[i];
-            }
 
-            for (int j = 0; j < after.length; j++)
-            {
-                sumAfter += before[j];
-            }
 
-            if (sumBefore == sumAfter)
-            {
-                sumCheck = true;
-            }
-            else
-            {
-                sumCheck = false;
-            }
-
-            return sumCheck;
-        }
 
 }
