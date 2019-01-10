@@ -10,9 +10,17 @@ public class Main {
         int[] beforeBubbleArr = Utilties.randomIntArr(10);
         int[] beforeSelectionArr = Utilties.randomIntArr(10);
         int[] beforeInsertionArr = Utilties.randomIntArr(10);
+        String[] stringArray = Utilties.randomStringArr(10, 4);
         int[] afterArr = beforeBubbleArr.clone();
         int[] afterArr2 = beforeSelectionArr.clone();
         int[] afterArr3 = beforeInsertionArr.clone();
+
+        ///////////////
+        //Prints out a string array
+        for (String num:stringArray)
+            System.out.print(num+" ");
+        System.out.println();
+
 
         ////////////////////////////////////////////
         //Prints out array1 before sort

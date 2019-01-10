@@ -32,15 +32,24 @@ public class Utilties {
     }
 
     //Generates an array with random strings
-    /*public static int[] randomStringArr (int count)
+    public static String[] randomStringArr (int arraySize, int length)
     {
-        String[] array = new String[count];
-        for (int i = 0; i<count; i++)
+        String[]arr = new String[arraySize];
+        while(arraySize > 0)
         {
-            array[i] =
+            int i = 0;
+            String s = "";
+            while (i < length)
+            {
+                char c = (char)((Math.random()*26)+97);
+                s = s + c;
+                i++;
+            }
+            arraySize--;
+            arr[arraySize] = s;
         }
-        return array;
-    }*/
+        return  arr;
+    }
 
     //Checks the sum of the array before and the sum of array after
     //If the sums are equal then returns true otherwise false
