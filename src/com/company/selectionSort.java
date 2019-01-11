@@ -30,4 +30,35 @@ public class selectionSort {
           }
       }
     }
+
+    public static void doubleSelectionSort(double[] arr)
+    {
+        double min = 1001;
+        double hold;
+        int indexofmin = 0;
+
+        //First for loop is used to increment the index at which we're checking minimums
+        for(int i = 0; i < arr.length; i++)
+        {
+            //Second for loop used to search through the whole array for minimums
+            for (int j = i; j < arr.length; j++)
+            {
+                //if a minimum is found store the value and index
+                if(arr[j] < min)
+                {
+                    min = arr[j];
+                    indexofmin = j;
+                }
+                //once we reached the end of array place the minimum at index i (i will have increased by one every time we do this)
+                if (j == arr.length-1)
+                {
+                    hold = arr[i];
+                    arr[i] = min;
+                    arr[indexofmin] = hold;
+                    min = 1001;
+                }
+            }
+        }
+
+    }
 }
