@@ -37,12 +37,12 @@ public class BubbleSort {
         public static void bubbleSortStrings (String[] array)
         {
             int test;
-            for(int i = 0; i < array.length; i++)
-            {
-                test = array[i].compareTo(array[i+1]);
-                if(test < 0)
-                {
-                 Utilties.swapString(array, i);
+            for (int j = 1; j < array.length; j++) {
+                for (int i = 0; i != array.length - 1; i++) {
+                    test = array[i].compareTo(array[i + 1]);
+                    if (test > 0) {
+                        Utilties.swapString(array, i);
+                    }
                 }
             }
         }

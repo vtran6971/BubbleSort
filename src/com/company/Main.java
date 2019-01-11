@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
-        //Create a random array of integers
+        //Creation of arrays and a copy of each
         int[] beforeBubbleArr = Utilties.randomIntArr(10);
         int[] beforeSelectionArr = Utilties.randomIntArr(10);
         int[] beforeInsertionArr = Utilties.randomIntArr(10);
@@ -14,16 +14,26 @@ public class Main {
         int[] afterArr = beforeBubbleArr.clone();
         int[] afterArr2 = beforeSelectionArr.clone();
         int[] afterArr3 = beforeInsertionArr.clone();
+        String[] afterArray = stringArray.clone();
 
         ///////////////
         //Prints out a string array
+        System.out.println("Before string Bubblesort: ");
         for (String num:stringArray)
             System.out.print(num+" ");
         System.out.println();
 
+        //Sorts using a string bubbleSort
+        BubbleSort.bubbleSortStrings(afterArray);
+
+        //Prints out array after sort
+        System.out.println("After string Bubblesort: ");
+        for (String num:afterArray)
+            System.out.print(num+" ");
 
         ////////////////////////////////////////////
         //Prints out array1 before sort
+        System.out.println();
         System.out.print("Before BubbleSort: ");
         for (int num:beforeBubbleArr)
             System.out.print(num+" ");
@@ -33,16 +43,16 @@ public class Main {
         BubbleSort.bubbleSort(afterArr);
 
         //Prints out array after sort
+        //Checks whether the array has the same sum as before sort and if the elements are indeed sorted
         System.out.print("After BubbleSort: ");
         for (int num:afterArr)
             System.out.print(num+" ");
         System.out.println();
-        if(Utilties.checkSum(beforeBubbleArr, afterArr) == true)
-        {
-            System.out.println("Sum before and after sort are equal");
-        }
+        Utilties.checkSum(beforeBubbleArr, afterArr);
+        Utilties.isSorted(afterArr);
 
-        ////////////////////////////////////////////
+
+        /////////////////////////////////////////////
         //Prints out array2 before SelectionSort
         System.out.println();
         System.out.print("Before SelectionSort: ");
