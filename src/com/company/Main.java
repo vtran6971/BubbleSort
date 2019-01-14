@@ -14,6 +14,12 @@ public class Main {
         double[] afterArr2 = beforeSelectionArr.clone();
         int[] afterArr3 = beforeInsertionArr.clone();
         String[] afterArray = stringArray.clone();
+        int[] copyArr0 = beforeBubbleArr.clone();
+        int[] copyArr1 = beforeBubbleArr.clone();
+        int[] copyArr2 = beforeBubbleArr.clone();
+
+        long timeStart = 0;
+        long timeStop = 0;
 
         //************************************************
         //Prints out a string array
@@ -40,7 +46,9 @@ public class Main {
         System.out.println();
 
         //Sorts using int bubbleSort
+        timeStart = System.nanoTime();
         BubbleSort.bubbleSort(afterArr);
+        timeStop = System.nanoTime() - timeStart;
 
         //Prints out int array after sort
         //Checks whether the array has the same sum as before sort and if the elements are indeed sorted
@@ -50,6 +58,7 @@ public class Main {
         System.out.println();
         Utilties.checkSum(beforeBubbleArr, afterArr);
         Utilties.isSorted(afterArr);
+        System.out.println("Bubblesort takes "+ timeStop + " nanoseconds");
 
         //************************************************
         //Prints out array2 before SelectionSort
@@ -88,5 +97,23 @@ public class Main {
         System.out.println();
         Utilties.checkSum(beforeInsertionArr, afterArr3);
         Utilties.isSorted(afterArr3);
+
+        System.out.println();
+        timeStart = System.nanoTime();
+        BubbleSort.bubbleSort(copyArr0);
+        timeStop = System.nanoTime() - timeStart;
+        System.out.println("Bubblesort takes " + timeStop + " nanoseconds");
+
+        System.out.println();
+        timeStart = System.nanoTime();
+        selectionSort.SelectionSort(copyArr1);
+        timeStop = System.nanoTime() - timeStart;
+        System.out.println("Selectionsort takes " + timeStop + " nanoseconds");
+
+        System.out.println();
+        timeStart = System.nanoTime();
+        InsertionSort.insertionSort(copyArr2);
+        timeStop = System.nanoTime() - timeStart;
+        System.out.println("Insertionsort takes " + timeStop + " nanoseconds");
     }
 }
